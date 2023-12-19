@@ -18,7 +18,13 @@ df_budget = df_budget[['_row', 'id_product', 'quantity', 'month', 'load_date']]
 # Cast the id_product to a maximum of 75 characters
 df_budget['id_product'] = df_budget['id_product'].astype(str).str[:75]
 
+# Convert the month column to UTC and rename it to month_utc
+df_budget['month'] = pd.to_datetime(df_budget['month']).dt.tz_localize('CET').dt.tz_convert('UTC')
+df_budget.rename(columns={'month': 'month_utc'}, inplace=True)
+
 # Show the first rows to verify the changes
+pd.set_option('display.max_columns', None)  # Displays all columns
+pd.set_option('display.expand_frame_repr', False)  # Avoid multiple line representation
 print(df_budget.head())
 
 # Establish a connection to the Silver PostgreSQL database
