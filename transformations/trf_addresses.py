@@ -20,6 +20,8 @@ df_addresses['state'] = df_addresses['state'].astype(str).str[:75]
 df_addresses['address'] = df_addresses['address'].astype(str).str[:75]
 
 # Show the first rows to verify the changes
+pd.set_option('display.max_columns', None)  # Displays all columns
+pd.set_option('display.expand_frame_repr', False)  # Avoid multiple line representation
 print(df_addresses.head())
 
 connection_string_silver = (f"postgresql+psycopg2://{db_config_silver['user']}:{db_config_silver['password']}"

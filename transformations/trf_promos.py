@@ -42,6 +42,8 @@ df_promos['id_promo'] = [hashlib.sha256(str.encode(promo_name)).hexdigest() for 
 df_promos = df_promos[['id_promo', 'promo_name', 'discount', 'status', 'load_date']]
 
 # Show the first rows to verify the changes
+pd.set_option('display.max_columns', None)  # Displays all columns
+pd.set_option('display.expand_frame_repr', False)  # Avoid multiple line representation
 print(df_promos.head())
 
 # Establishing a connection to the Silver PostgreSQL database

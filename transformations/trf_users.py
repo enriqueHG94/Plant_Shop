@@ -41,6 +41,8 @@ column_order = ['id_user', 'id_address', 'first_name', 'last_name', 'email', 'ph
 df_users = df_users[column_order]
 
 # Show the first rows to verify the changes
+pd.set_option('display.max_columns', None)  # Displays all columns
+pd.set_option('display.expand_frame_repr', False)  # Avoid multiple line representation
 print(df_users.head())
 
 # Connection to the Silver PostgreSQL database
