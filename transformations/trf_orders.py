@@ -10,7 +10,7 @@ bronze_engine = create_engine(
     f"{db_config['host']}:{db_config['port']}/{db_config['database']}"
 )
 
-# Read data from the budget table of the Bronze layer
+# Read data from the orders table of the Bronze layer
 df_orders = pd.read_sql_table('orders', bronze_engine, schema='csv')
 
 # Rename columns
