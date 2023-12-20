@@ -11,6 +11,11 @@ silver_engine = create_engine(
 # Read data from the users table of the silver zone
 dim_users = pd.read_sql_table('trf_users', silver_engine, schema='csv')
 
+# Reorganizing columns
+column_order = ['id_user', 'id_address', 'first_name', 'last_name', 'email', 'phone_number',
+                'profile_created_utc', 'profile_updated_utc', 'load_date']
+dim_users = dim_users[column_order]
+
 # Show the first rows to verify the changes
 pd.set_option('display.max_columns', None)  # Displays all columns
 pd.set_option('display.expand_frame_repr', False)  # Avoids line break in the console output
