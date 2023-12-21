@@ -46,7 +46,7 @@ for col in ['id_event', 'id_user', 'id_session', 'id_product', 'id_order', 'even
 pd.set_option('display.max_columns', None)  # Displays all columns
 pd.set_option('display.expand_frame_repr', False)  # Avoid multiple line representation
 print(df_events.head())
-print(df_events.dtypes)
+
 # Establish a connection to the Silver PostgreSQL database
 silver_engine = create_engine(
     f"postgresql+psycopg2://{db_config_silver['user']}:{db_config_silver['password']}@"
