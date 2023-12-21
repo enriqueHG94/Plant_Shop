@@ -6,7 +6,7 @@ import datetime
 
 # Function to load a CSV file into the corresponding PostgreSQL table
 def load_csv_to_postgresql(file_name, table_name, engine, schema='csv'):
-    df = pd.read_csv(f'Data/{file_name}.csv', delimiter=';')
+    df = pd.read_csv(f'bronze/{file_name}.csv', delimiter=';')
     # Convert all columns to lower case
     df.columns = [col.lower() for col in df.columns]
     # Adds the load date column to the DataFrame
