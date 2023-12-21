@@ -1,28 +1,25 @@
-# Plant_Shop Data Warehouse Project
+# Plant_Shop
 
-## Descripción
-El proyecto Plant_Shop es un almacén de datos que modela y analiza las operaciones de una tienda de plantas virtual. Utiliza ELT para procesar los datos, permitiendo análisis complejos y toma de decisiones basada en datos.
+## Project Objective
+The aim of this project is to replicate my final data engineering course project done with Cívica Software, but using different technologies to compare the differences between the Modern Data Stack technologies they taught us and the older ones I've used in this project.
+Final data engineering course project using technologies like Fivetran, Snowflake, and dbt: https://github.com/enriqueHG94/curso_data_engineering
 
-## Objetivo del proyecto
-el objetivo de este proyecto es imitar a mi proyecto final de el curso de ingeniería de datos que hice con Cívica Software pero con diferentes tecnologías, para ver las diferencias entre las tecnologias modern data stack que ellos nos enseñaron y las que he usado yo en este proyecto que pueden ser mas legacy o actuales.
-proyecto final del curso de ingenieria de datos con tecnologias como Fivetran, Snowflake y dbt: https://github.com/enriqueHG94/curso_data_engineering
+## Project Structure
+The project is structured in the Lakehouse medallion architecture:
+- **Bronze (Raw Data Zone)**: Stores unprocessed raw data.
+- **Silver (Cleansed Data Zone)**: Contains clean and transformed data ready for modeling.
+- **Gold (Dimensional Model Zone)**: Includes dimensional modeling with star schemas, optimized for analysis.
 
-## Estructura del Proyecto
-El proyecto está estructurado en la arquitectura de medallón de Lakehouse:
-- **Bronze (Raw Data Zone)**: Almacena datos brutos sin procesar.
-- **Silver (Cleansed Data Zone)**: Contiene datos limpios y transformados listos para ser modelados.
-- **Gold (Dimensional Model Zone)**: Incluye el modelado dimensional con esquemas en estrella, optimizados para análisis.
+## Implemented Use Cases
+1. User purchase analysis.
+2. User session summary.
+3. Monthly sales analysis by product.
 
-## Casos de Uso Implementados
-1. Análisis de compras de usuarios.
-2. Resumen de sesiones de usuario.
-3. Análisis de ventas por producto por mes.
-
-## Tecnologías usadas
+## Technologies Used
 - Python 3.10.0
 - PostgreSQL 16.1
-- Librerías de Python: pandas 2.1.4, sqlalchemy 2.0.23
+- Python Libraries: pandas 2.1.4, sqlalchemy 2.0.23, psycopg2-binary-2.9.9
 
-## Contacto
-Email: enriquehervasguerrero@gmail.com LinkedIn: https://www.linkedin.com/in/enrique-hervas-guerrero/
-
+## Contact
+Email: enriquehervasguerrero@gmail.com 
+LinkedIn: https://www.linkedin.com/in/enrique-hervas-guerrero/
