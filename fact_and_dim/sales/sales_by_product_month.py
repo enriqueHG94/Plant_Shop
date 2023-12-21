@@ -54,30 +54,30 @@ combined_sales_budget['total_difference'] = (
 # Convert 'order_created_utc' to datetime and extract the month
 fct_order_details['month'] = pd.to_datetime(fct_order_details['order_created_utc']).dt.month
 
-# Agrupar por mes y id_producto para obtener las unidades vendidas por mes
+# Group by month and product_id to get units sold per month
 monthly_sales = fct_order_details.groupby(['month', 'id_product']).agg(
     monthly_units_sold=pd.NamedAgg(column='quantity', aggfunc='sum')
 ).reset_index()
 
-# Calcular el ranking de ventas por mes
+# Calculate the sales ranking by month
 monthly_sales['rank_by_month'] = monthly_sales.groupby('month')['monthly_units_sold'] \
     .rank(method='first', ascending=False)
 
-# Unir el ranking mensual al DataFrame combined_sales_budget
+# Join the monthly ranking to the DataFrame  combined_sales_budget
 combined_sales_budget = combined_sales_budget.merge(
     monthly_sales[['id_product', 'month', 'rank_by_month']],
     on='id_product',
     how='left'
 )
 
-# Reordenar las columnas
+# Reorder the columns
 combined_sales_budget = combined_sales_budget[[
     'id_product', 'name', 'price', 'total_units_sold', 'units_budgeted',
     'units_difference', 'total_invoiced', 'total_expected',
     'total_difference', 'month', 'rank_by_month'
 ]]
 
-# Ordenar el DataFrame por 'rank_by_month' para que el producto más vendido aparezca primero
+# Sort the DataFrame by 'rank_by_month' so that the best-selling product is listed first
 combined_sales_budget.sort_values(by=['month', 'rank_by_month'], ascending=[True, True], inplace=True)
 
 # Show the first rows to verify the changes
