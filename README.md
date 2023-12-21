@@ -1,7 +1,7 @@
 # Plant_Shop
 
 ## Project Objective
-The aim of this project is to replicate my final data engineering course project done with Cívica Software, but using different technologies to compare the differences between the Modern Data Stack technologies they taught us and the older ones I've used in this project.
+The aim of this project is to replicate my final project of the data engineering course with Civica Software, but using different technologies to compare the differences between the Modern Data Stack technologies that we were taught that are newer against other technologies that I have used in this project and that have been on the market for a longer time.
 Final data engineering course project using technologies like Fivetran, Snowflake, and dbt: https://github.com/enriqueHG94/curso_data_engineering
 
 ## Project Structure
