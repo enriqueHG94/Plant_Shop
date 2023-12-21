@@ -37,7 +37,7 @@ df_users['profile_updated_utc'] = df_users['profile_updated_utc'].dt.tz_localize
 
 # Reorganizing columns
 column_order = ['id_user', 'id_address', 'first_name', 'last_name', 'email', 'phone_number',
-                'total_orders', 'profile_created_utc', 'profile_updated_utc', 'load_date']
+                'profile_created_utc', 'profile_updated_utc', 'load_date']
 df_users = df_users[column_order]
 
 # Show the first rows to verify the changes

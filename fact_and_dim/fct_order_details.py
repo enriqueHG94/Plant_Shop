@@ -37,11 +37,11 @@ pd.set_option('display.max_columns', None)  # Displays all columns
 pd.set_option('display.expand_frame_repr', False)  # Avoid multiple line representation
 print(fct_order_details)
 
-# Establish a connection to the Silver PostgreSQL database
+# Establish a connection to the Gold PostgreSQL database
 gold_engine = create_engine(
     f"postgresql+psycopg2://{db_config_gold['user']}:{db_config_gold['password']}@"
     f"{db_config_gold['host']}:{db_config_gold['port']}/{db_config_gold['database']}"
 )
 
-# Load the transformed data into a new table in the Silver zone
+# Load the transformed data into a new table in the Gold zone
 fct_order_details.to_sql('fct_order_details', gold_engine, if_exists='replace', index=False, schema='csv')
