@@ -1,0 +1,10 @@
+ALTER TABLE csv.dim_addresses ADD PRIMARY KEY (id_address);
+ALTER TABLE csv.dim_products ADD PRIMARY KEY (id_product);
+ALTER TABLE csv.dim_promos ADD PRIMARY KEY (id_promo);
+ALTER TABLE csv.dim_users ADD PRIMARY KEY (id_user);
+ALTER TABLE csv.fct_budget ADD PRIMARY KEY (_row);
+ALTER TABLE csv.fct_events ADD PRIMARY KEY (id_event);
+ALTER TABLE csv.fct_order_details ADD PRIMARY KEY (id_order_details);
+ALTER TABLE csv.sales_by_product_month ADD PRIMARY KEY (id_product);
+ALTER TABLE csv.session_analysis ADD PRIMARY KEY (id_session);
+ALTER TABLE csv.user_purchases ADD PRIMARY KEY (id_user);
