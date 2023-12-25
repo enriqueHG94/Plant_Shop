@@ -8,3 +8,4 @@ ALTER TABLE csv.fct_order_details ADD PRIMARY KEY (id_order_details);
 ALTER TABLE csv.sales_by_product_month ADD PRIMARY KEY (id_product);
 ALTER TABLE csv.session_analysis ADD PRIMARY KEY (id_session);
 ALTER TABLE csv.user_purchases ADD PRIMARY KEY (id_user);
+ALTER TABLE csv.dim_date ADD PRIMARY KEY (time_id);
